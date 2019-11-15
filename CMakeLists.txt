@@ -17,21 +17,41 @@ add_subdirectory(${LUA_PATH})
 
 set(LUASOCKET_SRC_PATH luasocket-master/src)
 
-set(LUASOCKET_SRC_FILES 
-    ${LUASOCKET_SRC_PATH}/auxiliar.c
-    ${LUASOCKET_SRC_PATH}/buffer.c
-    ${LUASOCKET_SRC_PATH}/except.c
-    ${LUASOCKET_SRC_PATH}/inet.c
-    ${LUASOCKET_SRC_PATH}/io.c
-    ${LUASOCKET_SRC_PATH}/luasocket.c
-    ${LUASOCKET_SRC_PATH}/mime.c
-    ${LUASOCKET_SRC_PATH}/options.c
-    ${LUASOCKET_SRC_PATH}/select.c
-    ${LUASOCKET_SRC_PATH}/tcp.c
-    ${LUASOCKET_SRC_PATH}/timeout.c
-    ${LUASOCKET_SRC_PATH}/udp.c
-    ${LUASOCKET_SRC_PATH}/wsocket.c
-)
+IF (WIN32)
+    set(LUASOCKET_SRC_FILES 
+        ${LUASOCKET_SRC_PATH}/auxiliar.c
+        ${LUASOCKET_SRC_PATH}/buffer.c
+        ${LUASOCKET_SRC_PATH}/except.c
+        ${LUASOCKET_SRC_PATH}/inet.c
+        ${LUASOCKET_SRC_PATH}/io.c
+        ${LUASOCKET_SRC_PATH}/luasocket.c
+        ${LUASOCKET_SRC_PATH}/mime.c
+        ${LUASOCKET_SRC_PATH}/options.c
+        ${LUASOCKET_SRC_PATH}/select.c
+        ${LUASOCKET_SRC_PATH}/tcp.c
+        ${LUASOCKET_SRC_PATH}/timeout.c
+        ${LUASOCKET_SRC_PATH}/udp.c
+        ${LUASOCKET_SRC_PATH}/wsocket.c
+    )
+ELSEIF (APPLE)
+    set(LUASOCKET_SRC_FILES 
+        ${LUASOCKET_SRC_PATH}/auxiliar.c
+        ${LUASOCKET_SRC_PATH}/buffer.c
+        ${LUASOCKET_SRC_PATH}/except.c
+        ${LUASOCKET_SRC_PATH}/inet.c
+        ${LUASOCKET_SRC_PATH}/io.c
+        ${LUASOCKET_SRC_PATH}/luasocket.c
+        ${LUASOCKET_SRC_PATH}/mime.c
+        ${LUASOCKET_SRC_PATH}/options.c
+        ${LUASOCKET_SRC_PATH}/select.c
+        ${LUASOCKET_SRC_PATH}/serial.c
+        ${LUASOCKET_SRC_PATH}/tcp.c
+        ${LUASOCKET_SRC_PATH}/timeout.c
+        ${LUASOCKET_SRC_PATH}/udp.c
+        ${LUASOCKET_SRC_PATH}/unix.c
+        ${LUASOCKET_SRC_PATH}/usocket.c
+    )
+ENDIF()
 
 set(PROTOBUF_SRC_PATH lua-protobuf-master)
 set(PB_SRC_FILES 
