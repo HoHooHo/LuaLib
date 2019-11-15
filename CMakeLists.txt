@@ -60,6 +60,17 @@ set(PB_SRC_FILES
 
 include_directories(${LUA_PATH}/src)
 
+
+
+if(APPLE)
+    if(IOS)
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
+    else()
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_64_BIT)")
+    endif()
+endif()
+
+
 add_library(socket STATIC
     ${LUASOCKET_SRC_FILES}
 )
