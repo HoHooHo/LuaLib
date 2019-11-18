@@ -33,7 +33,7 @@ IF (WIN32)
         ${LUASOCKET_SRC_PATH}/udp.c
         ${LUASOCKET_SRC_PATH}/wsocket.c
     )
-ELSEIF (APPLE)
+ELSE ()
     set(LUASOCKET_SRC_FILES 
         ${LUASOCKET_SRC_PATH}/auxiliar.c
         ${LUASOCKET_SRC_PATH}/buffer.c
