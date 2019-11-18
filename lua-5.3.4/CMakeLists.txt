@@ -48,6 +48,15 @@ set(LUA_SRC_FILES
 
 # add_definitions("-DLUA_USE_C89")
 
+
+if(APPLE)
+    if(IOS)
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
+    else()
+        set(CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD_64_BIT)")
+    endif()
+endif()
+
 add_library(Lua STATIC
     ${LUA_SRC_FILES}
 )
