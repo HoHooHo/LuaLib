@@ -4,7 +4,7 @@ popd
 cmake --build build_win64 --config Release
 
 md library\Win64
-copy /Y build_win64\lua-5.3.4\Release\Lua.lib library\Win64\Lua.lib
+copy /Y build_win64\lua-5.3.4\Release\lua.lib library\Win64\lua.lib
 copy /Y build_win64\Release\socket.lib library\Win64\socket.lib
 copy /Y build_win64\Release\protobuf.lib library\Win64\protobuf.lib
 

@@ -5,7 +5,7 @@ set(CMAKE_BUILD_TYPE Debug)
 
 
 # 项目信息
-project(Lua)
+project(lua)
 
 
 set(LUA_SRC_PATH src)
@@ -57,6 +57,6 @@ if(APPLE)
     endif()
 endif()
 
-add_library(Lua STATIC
+add_library(lua STATIC
     ${LUA_SRC_FILES}
 )

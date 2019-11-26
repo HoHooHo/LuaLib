@@ -2,4 +2,5 @@ build_win64/
 build_osx/
 build_linux/
 build_ios/
-build_android_v7a/
+build_android_*/
+.DS_Store
