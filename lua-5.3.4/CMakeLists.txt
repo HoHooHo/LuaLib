@@ -40,6 +40,7 @@ set(LUA_SRC_FILES
     ${LUA_SRC_PATH}/ltable.c
     ${LUA_SRC_PATH}/ltablib.c
     ${LUA_SRC_PATH}/ltm.c
+    ${LUA_SRC_PATH}/lua.c
     ${LUA_SRC_PATH}/lundump.c
     ${LUA_SRC_PATH}/lutf8lib.c
     ${LUA_SRC_PATH}/lvm.c
@@ -47,6 +48,7 @@ set(LUA_SRC_FILES
 )
 
 # add_definitions("-DLUA_USE_C89")
+
 
 
 if(APPLE)
@@ -57,6 +59,7 @@ if(APPLE)
     endif()
 endif()
 
-add_library(lua STATIC
+add_library(lua STATIC#SHARED
     ${LUA_SRC_FILES}
 )
+#target_compile_definitions(lua PRIVATE _CRT_SECURE_NO_WARNINGS LUA_BUILD_AS_DLL)
